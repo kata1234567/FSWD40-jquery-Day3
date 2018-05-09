@@ -15,8 +15,56 @@
 <body>
 
 	<h1>jQuery Animation</h1>
-
+	<br><br>
+	<h2>Basic1</h2>
 	<div id="animate">ANIMATE</div>
 
+<br><br><br><br><br><br><br><br><br><br>
+
+
+	<h2>Basic2</h2>
+<br>
+	<div class="todo">
+		<input id="list" type="text" name="liste">
+		<button id="button" type="submit">Add</button>
+			<ul class="todoliste">
+				<li>workout</li>
+				<li>breakfast</li>
+				<li>coding</li>
+				<li>academic writing</li>
+				<li>spargelsuppe</li>
+			</ul>
+			
+	</div>
+
+<script>
+
+	//Basic1 und Basic2
+	$(document).ready(function(){
+		$("#animate").hide().show(2000).animate({opacity:0.0},"slow");
+
+		$("#button").on("click", function(){
+		var inputtext = $("#list").val();
+		$("ul.todoliste").append("<li>" + inputtext + "</li>");
+
+		$("li").on("click", function (){
+			$(this).animate({
+				opacity: 0.0, paddingLeft: "+=100"
+			}, 1000, function(){
+				$(this).remove(); 
+			});
+			});
+	});
+
+
+		});
+
+
+
+
+
+
+
+</script>
 </body>
 </html>
